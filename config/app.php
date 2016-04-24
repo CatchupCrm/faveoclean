@@ -135,9 +135,21 @@ return [
 
     'providers' => [
 
-        /*
+
+        Collective\Bus\BusServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+
+
+        Yajra\Datatables\DatatablesServiceProvider::class,
+
+
+
+
+
+      /*
     	* Faveo Plugins
     	*/
+
 
         /*
          * Laravel Framework Service Providers...
@@ -147,7 +159,7 @@ return [
         'Illuminate\Bus\BusServiceProvider',
         'Illuminate\Cache\CacheServiceProvider',
         'Illuminate\Foundation\Providers\ConsoleSupportServiceProvider',
-        'Illuminate\Routing\ControllerServiceProvider',
+        //'Illuminate\Routing\ControllerServiceProvider',
         'Illuminate\Cookie\CookieServiceProvider',
         'Illuminate\Database\DatabaseServiceProvider',
         'Illuminate\Encryption\EncryptionServiceProvider',
@@ -164,7 +176,7 @@ return [
         'Illuminate\Translation\TranslationServiceProvider',
         'Illuminate\Validation\ValidationServiceProvider',
         'Illuminate\View\ViewServiceProvider',
-        'Illuminate\Html\HtmlServiceProvider',
+        //'Illuminate\Html\HtmlServiceProvider',
         /*
          * Application Service Providers...
          */
@@ -177,7 +189,7 @@ return [
         'Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider',
         'Vsmoraes\Pdf\PdfServiceProvider',
         'Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider',
-        'Chumper\Datatable\DatatableServiceProvider',
+        //'Chumper\Datatable\DatatableServiceProvider',
         'Chumper\Zipper\ZipperServiceProvider',
         Bestmomo\Filemanager\FilemanagerServiceProvider::class,
         Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
@@ -198,6 +210,13 @@ return [
      */
 
     'aliases' => [
+
+
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+
+        'Datatable'  => Yajra\Datatables\Facades\Datatables::class,
+
 
         'App'        => 'Illuminate\Support\Facades\App',
         'Artisan'    => 'Illuminate\Support\Facades\Artisan',
@@ -240,7 +259,7 @@ return [
         'UTC'        => 'App\Http\Controllers\Agent\helpdesk\TicketController',
         'Ttable'     => 'App\Http\Controllers\Agent\helpdesk\TicketController', //to use getTable function.
         'SMTPS'      => 'App\Http\Controllers\HomeController',
-        'Datatable'  => 'Chumper\Datatable\Facades\DatatableFacade',
+
         'Zipper'     => 'Chumper\Zipper\Zipper',
         'Image'      => Intervention\Image\Facades\Image::class,
         'JWTAuth'    => 'Tymon\JWTAuth\Facades\JWTAuth',
