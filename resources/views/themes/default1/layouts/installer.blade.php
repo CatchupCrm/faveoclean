@@ -5,27 +5,27 @@
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
         <link href="{{asset("lb-faveo/downloads/bootstrap.min.css")}}" rel="stylesheet" type="text/css" />
-        {{-- {{ HTML::style('ep-content/themes/ep-admin/default1/css/bootstrap.min.css'); }} --}}
+        {{-- {{ Html::style('ep-content/themes/ep-admin/default1/css/bootstrap.min.css'); }} --}}
 
         <!-- font Awesome -->
         {{-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" /> --}}
-        {{-- {{ HTML::style('ep-content/themes/ep-admin/default1/css/font-awesome.min.css'); }} --}}
+        {{-- {{ Html::style('ep-content/themes/ep-admin/default1/css/font-awesome.min.css'); }} --}}
 
         <!-- Ionicons -->
         <link href="{{asset("lb-faveo/downloads/ionicons.min.css")}}" rel="stylesheet" type="text/css" />
-        {{-- {{ HTML::style('ep-content/themes/ep-admin/default1/admin/css/ionicons.min.css'); }} --}}
+        {{-- {{ Html::style('ep-content/themes/ep-admin/default1/admin/css/ionicons.min.css'); }} --}}
 
         <!-- Theme style -->
         <link href="{{asset("lb-faveo/dist/css/AdminLTE.min.css")}}" rel="stylesheet" type="text/css" />
-        {{-- {{ HTML::style('ep-content/themes/ep-admin/default1/admin/css/AdminLTE.css'); }} --}}
+        {{-- {{ Html::style('ep-content/themes/ep-admin/default1/admin/css/AdminLTE.css'); }} --}}
 
         <!-- Bootstrap time Picker -->
         {{-- <link href="{{asset("downloads/ionicons.min.css")}}" rel="stylesheet" type="text/css" /> --}}
-        {{-- {{ HTML::style('ep-content/themes/ep-admin/default1/css/daterangepicker/daterangepicker-bs3.css'); }} --}}
+        {{-- {{ Html::style('ep-content/themes/ep-admin/default1/css/daterangepicker/daterangepicker-bs3.css'); }} --}}
 
         <!-- daterange picker -->
         {{-- <link href="{{asset("downloads/ionicons.min.css")}}" rel="stylesheet" type="text/css" /> --}}
-        {{-- {{ HTML::style('ep-content/themes/ep-admin/default1/css/timepicker/bootstrap-timepicker.min.css'); }} --}}
+        {{-- {{ Html::style('ep-content/themes/ep-admin/default1/css/timepicker/bootstrap-timepicker.min.css'); }} --}}
 
 <style type="text/css">
 a:link    {color:#000;}  /* unvisited link  */

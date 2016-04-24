@@ -13,7 +13,7 @@ return [
     |
      */
 
-    'debug' => false,
+    'debug' => env('DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -250,8 +250,8 @@ return [
         'URL'        => 'Illuminate\Support\Facades\URL',
         'Validator'  => 'Illuminate\Support\Facades\Validator',
         'View'       => 'Illuminate\Support\Facades\View',
-        'Form'       => 'Illuminate\Html\FormFacade',
-        'HTML'       => 'Illuminate\Html\HtmlFacade',
+        //'Form'       => 'Illuminate\Html\FormFacade',
+        //'HTML'       => 'Illuminate\Html\HtmlFacade',
         'phone'      => 'The :attribute field contains an invalid number.',
         'Bugsnag'    => 'Bugsnag\BugsnagLaravel\BugsnagFacade',
         'PDF'        => 'Vsmoraes\Pdf\PdfFacade',
