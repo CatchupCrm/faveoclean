@@ -52,11 +52,9 @@ class MailController extends Controller
         // $helptopic = $this->TicketController->default_helptopic();
         // $sla = $this->TicketController->default_sla();
 
-
-
-
-
-
+        /*
+         *  Those are my mailboxes
+         **/
         $email = $emails->get();
         foreach ($email as $e_mail) {
           if ($e_mail->fetching_status == 1) {
@@ -97,15 +95,46 @@ class MailController extends Controller
               }
               $protocol = $fetching_protocol . $fetching_encryption;
             }
+            //$imap_config = '{' . $host . ':' . $port . $protocol . '}INBOX';
+            //if ($request->validate == 'on') {
+              //$validate = '/validate-cert';
+            //} else {
+              //$validate = '/novalidate-cert';
+            //}
+            //dd($fetching_encryption);
+            //$mailbox_protocol = $fetching_encryption . $validate;
+            //dd($mailbox_protocol);
+            /*
+             *  {imap.gmail.com:993/imap/ssl/novalidate-cert}INBOX
+             **/
             $imap_config = '{' . $host . ':' . $port . $protocol . '}INBOX';
+            //$imap_config = '{' . $host . ':' . $port . $mailbox_protocol . $validate . '}INBOX';
             $password = Crypt::decrypt($e_mail->password);
 
 
+            //dd($imap_config);
+            /*
+              if ($request->validate == 'on') {
+                $validate = '/validate-cert';
+              } else {
+                $validate = '/novalidate-cert';
+              }
+              $fetching_protocol = '/' . $request->input('fetching_protocol');
+              $fetching_encryption = '/' . $request->input('fetching_encryption');
+              *        $mailbox_protocol = $fetching_protocol . $fetching_encryption;
+              $host = $request->input('fetching_host');
+              $port = $request->input('fetching_port');
+             **/
+            //$mailbox = '{' . $host . ':' . $port . $mailbox_protocol . $validate . '}INBOX';
 
 
             $mailbox = new ImapMailbox($imap_config, $e_mail->email_address, $password, __DIR__);
             $mails = [];
-            $mailsIds = $mailbox->searchMailBox('SINCE ' . date('d-M-Y', strtotime('-1 day')));
+            $mailsIds = $mailbox->searchMailBox('SINCE ' . date('d-M-Y', strtotime('-10 day')));
+
+dd($mailsIds);
+
+
 
 
             if (!$mailsIds) {
