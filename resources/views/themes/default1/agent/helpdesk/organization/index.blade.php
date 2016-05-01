@@ -37,15 +37,40 @@ class="active"
             {{Session::get('fails')}}
         </div>
         @endif
-                {!! Datatable::table()
-                    ->addColumn(Lang::get('lang.name'),
-                                Lang::get('lang.website'),
-                                Lang::get('lang.phone'),
-                                Lang::get('lang.action'))  // these are the column headings to be shown
-                    ->setUrl(route('org.list'))  // this is the route where data will be retrieved
-                    ->render() !!}
+
+        <table id="users-table" class="table table-condensed">
+          <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Website</th>
+            <th>Phone</th>
+            <th>Action</th>
+          </tr>
+          </thead>
+        </table>
     </div>
 </div>
 
-@stop
+<script>
+  $('#users-table').DataTable({
+    processing: true,
+    serverSide: true,
+    ajax: '{{ route('org.list') }}',
+    columns: [
+      {data: 'id', name: 'id'},
+      {data: 'name', name: 'name'},
+      {data: 'email', name: 'email'},
+      {data: 'created_at.date', name: 'created_at'},
+      {data: 'updated_at.date', name: 'updated_at'}
+    ]
+  });
+</script>
+
+
+
+@endsection
+
+
+
 <!-- /content -->
