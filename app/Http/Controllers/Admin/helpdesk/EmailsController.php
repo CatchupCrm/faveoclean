@@ -270,26 +270,6 @@ class EmailsController extends Controller
    */
   public function validatingEmailSettingsUpdate($id, Request $request)
   {
-    $validator = \Validator::make(
-      [
-        'email_address' => $request->email_address,
-        'email_name' => $request->email_name,
-        'password' => $request->password,
-      ], [
-        'email_address' => 'email',
-        'email_name' => 'required',
-        'password' => 'required',
-      ]
-    );
-    if ($validator->fails()) {
-      $jsons = $validator->messages();
-      $val = '';
-      foreach ($jsons->all() as $key => $value) {
-        $val .= $value;
-      }
-      $return_data = rtrim(str_replace('.', ',', $val), ',');
-      return $return_data;
-    }
     //        return $request;
     if ($request->validate == 'on') {
       $validate = '/validate-cert';
@@ -316,6 +296,10 @@ class EmailsController extends Controller
       $smtp_check = 0;
       $need_to_check_smtp = 0;
     }
+
+
+
+
     if ($need_to_check_imap == 1 && $need_to_check_smtp == 1) {
       if ($imap_check != 0 && $smtp_check != 0) {
         $this->update($id, $request);
@@ -450,6 +434,10 @@ class EmailsController extends Controller
       $mailbox = '{' . $host . ':' . $port . $mailbox_protocol . $validate . '}INBOX';
       $mailbox_protocol = $fetching_encryption . $validate;
     }
+
+    echo "Mailbox Information:".$mailbox."<BR />";
+
+
     try {
       $imap_stream = imap_open($mailbox, $username, $password);
     } catch (\Exception $ex) {
