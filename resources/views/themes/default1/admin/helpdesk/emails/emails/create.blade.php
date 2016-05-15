@@ -389,7 +389,7 @@ class="active"
             }
         }
 
-// Ajax communicating to backend for further Checking/Saving the details
+        // Ajax communicating to backend for further Checking/Saving the details
         $.ajax({
             type: "POST",
             url: "{!! route('validating.email.settings') !!}",
