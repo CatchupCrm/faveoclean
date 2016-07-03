@@ -132,11 +132,6 @@ class MailController extends Controller
             $mails = [];
             $mailsIds = $mailbox->searchMailBox('SINCE ' . date('d-M-Y', strtotime('-10 day')));
 
-dd($mailsIds);
-
-
-
-
             if (!$mailsIds) {
               die('Mailbox is empty');
             }
